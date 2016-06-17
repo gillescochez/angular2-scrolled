@@ -44,6 +44,12 @@ module.exports = function(grunt) {
                 dest: "demo/demo.min.js"
             }
         },
+        watch: {
+            demo: {
+                files: ["demo/demo.js"],
+                tasks: ["babel:demo", "browserify:demo", "uglify:demo", "clean"]
+            }
+        },
         clean: ["demo/vendor.src.js", "demo/demo.src.js", "demo/demo.babel.js"]
     });
 
