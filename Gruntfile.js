@@ -16,25 +16,35 @@ module.exports = function(grunt) {
             }
         },
         browserify: {
-            demo: {
+            vendor: {
                 files: {
-                    "demo/bundle.src.js": [
+                    "demo/vendor.src.js": [
                         "node_modules/core-js/client/shim.js",
                         "node_modules/zone.js/dist/zone.js",
                         "node_modules/reflect-metadata/Reflect.js",
-                        "node_modules/@angular/*/bundles/*.umd.js",
+                        "node_modules/@angular/*/bundles/*.umd.js"
+                    ]
+                }
+            },
+            demo: {
+                files: {
+                    "demo/demo.src.js": [
                         "demo/demo.babel.js"
                     ]
                 }
             }
         },
         uglify: {
+            vendor: {
+                src: ["demo/vendor.src.js"],
+                dest: "demo/vendor.min.js"
+            },
             demo: {
-                src: ["demo/bundle.src.js"],
-                dest: "demo/bundle.js"
-            }    
+                src: ["demo/demo.src.js"],
+                dest: "demo/demo.min.js"
+            }
         },
-        clean: ["demo/bundle.src.js", "demo/demo.babel.js"]
+        clean: ["demo/vendor.src.js", "demo/demo.src.js", "demo/demo.babel.js"]
     });
 
     grunt.loadNpmTasks("grunt-contrib-watch");

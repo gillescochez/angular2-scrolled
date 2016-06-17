@@ -1,3 +1,4 @@
 node_modules/
-demo/bundle.js
+demo/vendor.min.js
+demo/demo.min.js
 .log
