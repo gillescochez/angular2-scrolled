@@ -1,10 +1,32 @@
 module.exports = function(grunt) {
 
-    var tasks = ["browserify"];
+    var tasks = ["browserify:demo"];
 
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
         browserify: {
+            bundleSrc: {
+                files: {
+                    "bundles/angular2-scrolled.umd.js": ["angular2-scrolled.js"]
+                },
+                options: {
+                    transform: [["babelify", {
+                        presets: ["es2015", "angular2"],
+                        plugins: ["babel-plugin-transform-es2015-modules-umd"]
+                    }]]
+                }
+            },
+            bundleMin: {
+                files: {
+                    "bundles/angular2-scrolled.umd.min.js": ["angular2-scrolled.js"]
+                },
+                options: {
+                    transform: [["babelify", {
+                        presets: ["es2015", "angular2"],
+                        plugins: ["babel-plugin-transform-es2015-modules-umd"]
+                    }], "uglifyify"]
+                }
+            },
             vendor: {
                 files: {
                     "demo/vendor.min.js": [
@@ -46,4 +68,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-browserify");
 
     grunt.registerTask("default", tasks);
+    grunt.registerTask("vendor", ["browserify:vendor"]);
+    grunt.registerTask("bundles", ["browserify:bundleSrc", "browserify:bundleMin"]);
 };
