@@ -12,3 +12,21 @@
     width: 100px;
     height: 100px;
 }
+#doc > .item {
+    width: 400px;
+    height: 400px;
+}
+#wrap-horizontal {
+    width: 300px;
+    height: 60px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+}
+#wrap-horizontal .item {
+    width: 50px;
+    height: 50px;
+    display: inline;
+}

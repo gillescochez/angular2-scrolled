@@ -1,6 +1,22 @@
 <p>In a element (no threshold) <input type="checkbox" [(ngModel)]="enabled" /> Enabled</p>
-<div id="wrap" scrolled [scrolledEnabled]="enabled">
+<div id="wrap" scrolled (onScrolled)="more()" [scrolledEnabled]="enabled">
     <div *ngFor="let item of items" class="item">
+        {{item.name}}
+    </div>
+</div>
+
+<p>Horizontal scrolling</p>
+<div id="wrap-horizontal" scrolled (onScrolled)="hMore()" [scrolledDirection]="'horizontal'">
+    <div [style.width]="hWidth">
+        <div *ngFor="let item of hItems" class="item">
+            {{item.name}}
+        </div>
+    </div>
+</div>
+
+<p>On the document (threshold 200)</p>
+<div id="doc" scrolled (onScrolled)="windowMore()" [scrolledWindow]="true" [scrolledThreshold]="200">
+    <div *ngFor="let item of windowItems" class="item">
         {{item.name}}
     </div>
 </div>
