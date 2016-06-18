@@ -1,6 +1,6 @@
 # Angular 2 scrolled
 
-Angular scrolled in an infinite scrolling directive for angular 2 which trigger an event when the user scroll to the end.
+Angular2-scrolled in an infinite scrolling directive for angular 2 which trigger an event when the user scroll to the end.
 It supports both vertical and horizontal scrolling.
 
 *Doesn't require jQuery.*
