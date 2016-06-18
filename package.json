@@ -13,11 +13,11 @@
     "babel-preset-angular2": "0.0.2",
     "babel-plugin-transform-es2015-modules-umd": "6.8.0",
 
+    "uglifyify": "3.0.2",
+    "babelify": "7.3.0",
+
     "grunt": "~1.0.1",
-    "grunt-contrib-uglify": "~1.0.1",
     "grunt-contrib-watch": "~1.0.0",
-    "grunt-contrib-clean": "~1.0.0",
-    "grunt-babel": "6.0.0",
     "grunt-browserify": "4.0.1"
   },
   "dependencies": {
