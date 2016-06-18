@@ -1,9 +1,11 @@
 import { Component } from "@angular/core";
 import { bootstrap } from "@angular/platform-browser-dynamic";
+import { ScrolledDirective } from "../angular2-scrolled";
 
 @Component({
     selector: "my-app",
-    templateUrl: "demo.html"
+    templateUrl: "demo.html",
+    directives: [ScrolledDirective]
 })
 
 export class AppComponent {

@@ -22,6 +22,7 @@ module.exports = function(grunt) {
             demo: {
                 files: {
                     "demo/demo.min.js": [
+                        "angular2-scrolled.js",
                         "demo/demo.js"
                     ]
                 },
@@ -35,7 +36,7 @@ module.exports = function(grunt) {
         },
         watch: {
             demo: {
-                files: ["demo/demo.js"],
+                files: ["angular2-scrolled.js", "demo/demo.js"],
                 tasks: ["browserify:demo"]
             }
         }
