@@ -36,11 +36,9 @@ module.exports = function(grunt) {
             vendor: {
                 files: {
                     "demo/vendor.min.js": [
-                        "node_modules/rxjs/bundles/Rx.umd.js",
                         "node_modules/core-js/client/shim.js",
                         "node_modules/zone.js/dist/zone.js",
-                        "node_modules/reflect-metadata/Reflect.js",
-                        "node_modules/@angular/*/bundles/*.umd.js"
+                        "node_modules/reflect-metadata/Reflect.js"
                     ]
                 },
                 options: {
