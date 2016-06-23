@@ -48,7 +48,6 @@ module.exports = function(grunt) {
             demo: {
                 files: {
                     "demo/demo.min.js": [
-                        "angular2-scrolled.js",
                         "demo/demo.js"
                     ]
                 },
