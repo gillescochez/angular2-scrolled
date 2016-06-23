@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-    var tasks = ["browserify:demo"];
+    var tasks = ["browserify"];
 
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
@@ -10,6 +10,9 @@ module.exports = function(grunt) {
                     "bundles/angular2-scrolled.umd.js": ["angular2-scrolled.js"]
                 },
                 options: {
+                    browserifyOptions: {
+                        bundleExternal: false
+                    },
                     transform: [["babelify", {
                         presets: ["es2015", "angular2"],
                         plugins: ["babel-plugin-transform-es2015-modules-umd"]
@@ -21,6 +24,9 @@ module.exports = function(grunt) {
                     "bundles/angular2-scrolled.umd.min.js": ["angular2-scrolled.js"]
                 },
                 options: {
+                    browserifyOptions: {
+                        bundleExternal: false
+                    },
                     transform: [["babelify", {
                         presets: ["es2015", "angular2"],
                         plugins: ["babel-plugin-transform-es2015-modules-umd"]
